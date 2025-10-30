@@ -1,48 +1,310 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Our Seminar!</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join DumosTech Community | Connect. Learn. Grow.</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Matrix-style code rain effect -->
+    <canvas id="matrix-canvas"></canvas>
+
     <div class="floating-shapes">
-        <div class="shape"></div>
-        <div class="shape"></div>
-        <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape code-bracket">&lt;/&gt;</div>
+      <div class="shape code-bracket">{ }</div>
     </div>
 
     <div class="container">
-        <div class="logo">
-            <img src="assets/Dumostech logo.png" alt="">
-        </div>
-        <h1>Welcome!</h1>
-        <p class="subtitle">Connect with us and join the conversation</p>
-        
-        <div class="links-container">
-            <a href="https://dumostech.com/" target="_blank" class="link-btn website-btn">
-                <div class="icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <line x1="2" y1="12" x2="22" y2="12"></line>
-                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                    </svg>
-                </div>
-                <span>Visit Our Website</span>
-            </a>
+      <!-- Terminal-style loading message -->
+      <div class="terminal-text">
+        <span class="terminal-prompt">user@dumostech:~$</span>
+        <span class="typing-text"></span>
+        <span class="cursor">|</span>
+      </div>
 
-            <a href="https://chat.whatsapp.com/your-group-link" class="link-btn whatsapp-btn">
-                <div class="icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-                    </svg>
-                </div>
-                <span>Join WhatsApp Group</span>
-            </a>
-        </div>
+      <div class="logo">
+        <img src="assets/Dumostech logo.png" alt="DumosTech Logo" />
+      </div>
 
-        <p class="footer-text">We're excited to have you here! 🎉</p>
+      <h1 class="glitch-text" data-text="Welcome to the Community!">
+        Welcome to the Community!
+      </h1>
+
+      <p class="subtitle">
+        <span class="tech-joke">// TODO: Stop working alone</span>
+        <br />Where Tech Enthusiasts Connect, Collaborate & Grow
+      </p>
+
+      <!-- Funny status messages that rotate -->
+      <div class="status-message">
+        <span class="status-icon">✨</span>
+        <span class="rotating-status"></span>
+      </div>
+
+      <div class="value-props">
+        <div class="prop">
+          <span class="prop-icon">💡</span>
+          <span class="prop-text">Learn & Share Knowledge</span>
+        </div>
+        <div class="prop">
+          <span class="prop-icon">🤝</span>
+          <span class="prop-text">Network with Techies</span>
+        </div>
+        <div class="prop">
+          <span class="prop-icon">🎯</span>
+          <span class="prop-text">Discover Opportunities</span>
+        </div>
+      </div>
+
+      <div class="links-container">
+        <a
+          href="https://chat.whatsapp.com/your-group-link"
+          class="link-btn whatsapp-btn"
+          target="_blank"
+        >
+          <div class="icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+              />
+            </svg>
+          </div>
+          <span>git commit -m "Join Community"</span>
+          <div class="badge">
+            <span class="badge-text"></span>
+          </div>
+        </a>
+
+        <a
+          href="https://dumostech.com/"
+          target="_blank"
+          class="link-btn website-btn"
+        >
+          <div class="icon">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path
+                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+              ></path>
+            </svg>
+          </div>
+          <span>sudo Explore-website</span>
+        </a>
+      </div>
+
+      <div class="footer-section">
+        <div class="code-snippet">
+          <code>
+            <span class="keyword">if</span> (you.love(<span class="string"
+              >"tech"</span
+            >)) {<br />
+            &nbsp;&nbsp;<span class="keyword">return</span>
+            <span class="string">"Join us!"</span>;<br />
+            }
+          </code>
+        </div>
+        <p class="footer-text">
+          <span class="console-text">console.log('Welcome aboard!');</span>
+        </p>
+      </div>
+
+      <!-- Easter egg: Click counter -->
+      <div class="easter-egg">
+        <p>🥚 Tap me!</p>
+      </div>
     </div>
-</body>
+
+    <script>
+      // Matrix rain effect
+      const canvas = document.getElementById("matrix-canvas");
+      const ctx = canvas.getContext("2d");
+
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      const matrix = "01アイウエオカキクケコサシスセソタチツテト";
+      const fontSize = 14;
+      const columns = canvas.width / fontSize;
+      const drops = Array(Math.floor(columns)).fill(1);
+
+      function drawMatrix() {
+        ctx.fillStyle = "rgba(58, 49, 125, 0.05)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = "#764ba2";
+        ctx.font = fontSize + "px monospace";
+
+        for (let i = 0; i < drops.length; i++) {
+          const text = matrix[Math.floor(Math.random() * matrix.length)];
+          ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+          if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+            drops[i] = 0;
+          }
+          drops[i]++;
+        }
+      }
+
+      setInterval(drawMatrix, 50);
+
+      // Resize canvas on window resize
+      window.addEventListener("resize", () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      });
+
+      // Terminal typing effect
+      const terminalMessages = [
+        "whoami",
+        "cd /join-community",
+        "npm install awesome-people",
+        "git clone success.git",
+      ];
+
+      let messageIndex = 0;
+      let charIndex = 0;
+      const typingText = document.querySelector(".typing-text");
+
+      function typeTerminal() {
+        if (charIndex < terminalMessages[messageIndex].length) {
+          typingText.textContent +=
+            terminalMessages[messageIndex].charAt(charIndex);
+          charIndex++;
+          setTimeout(typeTerminal, 100);
+        } else {
+          setTimeout(() => {
+            charIndex = 0;
+            typingText.textContent = "";
+            messageIndex = (messageIndex + 1) % terminalMessages.length;
+            typeTerminal();
+          }, 2000);
+        }
+      }
+
+      typeTerminal();
+
+      // Rotating status messages (funny tech jokes)
+      const statusMessages = [
+        "404: Loneliness Not Found ✨",
+        "Compiling friendships... 99% ⚡",
+        "No bugs here, we promise 🐛",
+        "Deploying opportunities... ✅",
+        "Building your network... 🚀",
+        "Merging pull requests & ideas 💡",
+        "Stack overflow? We got answers! 💬",
+        "Coffee.exists() ? Join : Join() ☕",
+      ];
+
+      let statusIndex = 0;
+      const rotatingStatus = document.querySelector(".rotating-status");
+
+      function rotateStatus() {
+        rotatingStatus.style.opacity = "0";
+        setTimeout(() => {
+          rotatingStatus.textContent = statusMessages[statusIndex];
+          rotatingStatus.style.opacity = "1";
+          statusIndex = (statusIndex + 1) % statusMessages.length;
+        }, 500);
+      }
+
+      rotateStatus();
+      setInterval(rotateStatus, 3000);
+
+      // Rotating badge text
+      const badgeTexts = ["Active Now!", "Join Us!", "Let's Go!", "Click Me!"];
+
+      let badgeIndex = 0;
+      const badgeText = document.querySelector(".badge-text");
+
+      function rotateBadge() {
+        badgeText.textContent = badgeTexts[badgeIndex];
+        badgeIndex = (badgeIndex + 1) % badgeTexts.length;
+      }
+
+      rotateBadge();
+      setInterval(rotateBadge, 2000);
+
+      // Pulse effect on WhatsApp button
+      const whatsappBtn = document.querySelector(".whatsapp-btn");
+      setInterval(() => {
+        whatsappBtn.style.transform = "scale(1.02)";
+        setTimeout(() => {
+          whatsappBtn.style.transform = "scale(1)";
+        }, 200);
+      }, 3000);
+
+      // Easter egg counter
+      const easterEgg = document.querySelector(".easter-egg");
+      let clickCount = 0;
+      const easterEggMessages = [
+        "🥚 Nice! Keep tapping...",
+        "🐣 You found a secret!",
+        "🐥 Almost there...",
+        "🎉 You're a true techie!",
+        "🚀 Achievement Unlocked!",
+        "💻 Master Debugger Status!",
+      ];
+
+      easterEgg.addEventListener("click", () => {
+        clickCount++;
+        if (clickCount <= easterEggMessages.length) {
+          easterEgg.querySelector("p").textContent =
+            easterEggMessages[clickCount - 1];
+          easterEgg.style.transform = "scale(1.2)";
+          setTimeout(() => {
+            easterEgg.style.transform = "scale(1)";
+          }, 200);
+        }
+        if (clickCount === easterEggMessages.length) {
+          setTimeout(() => {
+            easterEgg.style.display = "none";
+          }, 2000);
+        }
+      });
+
+      // Interactive touch effects for mobile
+      document.querySelectorAll(".prop").forEach((prop) => {
+        prop.addEventListener("touchstart", function () {
+          this.style.transform = "scale(0.95) translateY(-3px)";
+        });
+        prop.addEventListener("touchend", function () {
+          this.style.transform = "scale(1) translateY(-3px)";
+        });
+      });
+
+      // Glitch effect on hover/touch for heading
+      const glitchText = document.querySelector(".glitch-text");
+      let glitchInterval;
+
+      function startGlitch() {
+        let count = 0;
+        glitchInterval = setInterval(() => {
+          glitchText.style.textShadow = `
+            ${Math.random() * 10 - 5}px ${Math.random() * 10 - 5}px 0 #ff00de,
+            ${Math.random() * 10 - 5}px ${Math.random() * 10 - 5}px 0 #00ffff
+          `;
+          count++;
+          if (count > 5) {
+            clearInterval(glitchInterval);
+            glitchText.style.textShadow = "2px 2px 10px rgba(0,0,0,0.2)";
+          }
+        }, 50);
+      }
+
+      glitchText.addEventListener("mouseenter", startGlitch);
+      glitchText.addEventListener("touchstart", startGlitch);
+    </script>
+  </body>
 </html>
