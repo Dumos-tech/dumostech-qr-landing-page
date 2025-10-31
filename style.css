@@ -493,6 +493,7 @@ body {
 .cursor {
   animation: blink 1s infinite;
   margin-left: 2px;
+  color: white;
 }
 
 @keyframes blink {
