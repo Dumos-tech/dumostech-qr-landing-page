@@ -100,55 +100,6 @@ body {
   }
 }
 
-/* Terminal effect at the top */
-.terminal-text {
-  position: absolute;
-  top: -50px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: "Courier New", monospace;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 13px;
-  white-space: nowrap;
-  animation: slideDown 1s ease-out;
-}
-
-.terminal-prompt {
-  color: #25d366;
-  font-weight: bold;
-}
-
-.typing-text {
-  color: white;
-  margin-left: 5px;
-}
-
-.cursor {
-  animation: blink 1s infinite;
-}
-
-@keyframes blink {
-  0%,
-  50% {
-    opacity: 1;
-  }
-  51%,
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes slideDown {
-  from {
-    top: -100px;
-    opacity: 0;
-  }
-  to {
-    top: -50px;
-    opacity: 1;
-  }
-}
-
 .container {
   position: relative;
   z-index: 2;
@@ -511,13 +462,52 @@ body {
   }
 }
 
+/* Terminal box styling - replaces TODO */
+.terminal-box {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 10px 16px;
+  margin: 0 auto 15px;
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+  text-align: left;
+  display: inline-block;
+  min-width: 300px;
+  max-width: 90%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1s ease-out 0.3s both;
+}
+
+.terminal-prompt {
+  color: #25d366;
+  font-weight: bold;
+  margin-right: 6px;
+}
+
+.typing-text {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.cursor {
+  animation: blink 1s infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
 /* Mobile optimizations */
 @media (max-width: 480px) {
-  .terminal-text {
-    font-size: 11px;
-    top: -40px;
-  }
-
   h1,
   .glitch-text {
     font-size: 28px;
@@ -528,7 +518,9 @@ body {
   }
 
   .tech-joke {
-    font-size: 12px;
+    font-size: 11px;
+    padding: 8px 12px;
+    min-width: 260px;
   }
 
   .link-btn {
